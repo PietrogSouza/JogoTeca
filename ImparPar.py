@@ -1,15 +1,25 @@
 import random
-imparpar = input("impar ou par: ")
+def jogo_Impar_Par():
 
-numero1 = random.randint(1,10)
-numero2 = int(input("me diga um numero "))
+    imparpar = input("impar ou par: ")
 
-print(f"o meu numero é: {numero1}")
+    if imparpar == ("par"):
+        print("Então sou impar")
+    else:
+        print("Então sou")
 
-resultado1 = numero1 + numero2
-resultado2 = resultado1 % 2
+    numero1 = random.randint(1,10)
+    numero2 = int(input("me diga um numero "))
 
-if (imparpar == "impar" and resultado2 == 1) or (imparpar == "par" and resultado2 == 0):
-    print("Parabens, você ganhou")
-else:
-    print("Você Perdeu")
+    print(f"o meu numero é: {numero1}")
+
+    resultado1 = numero1 + numero2
+    resultado2 = resultado1 % 2
+
+    if (imparpar == "impar" and resultado2 == 1) or (imparpar == "par" and resultado2 == 0):
+        print("Parabens, você ganhou")
+    else:
+        print("Você Perdeu")
+
+if __name__ == "__main__":
+    jogo_Impar_Par()

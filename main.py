@@ -1,4 +1,7 @@
 import adivinhacao
+import Tabuada
+import ImparPar
+
 
 print("""
                                          (`-')      (`-')  _           (`-')  _  
@@ -11,8 +14,24 @@ print("""
  `-----'    `-----'  `-----'     `-----'    `--'    `------'   `-----' `--' `--' 
 """)
 
+print("""
+##############################################
+      
+# 1 - Jogo de Adivinhaçao 
+# 2 - Jogo da Tabuada
+# 3 - Jogo Par ou Impar
+      
+##############################################
+""")
+
 #Perguntando qual jogo será jogado
-jogo = int(input("informe o jogo escolhido: "))
+jogo = int(input("Olá, qual jogo você gostaria de jogar? "))
 #Verificando qual jogo foi escolhido
 if jogo == 1:
     adivinhacao.jogo_adivinhacao()
+
+elif jogo == 2:
+    Tabuada.jogo_tabuada()
+
+elif jogo == 3:    
+    ImparPar.jogo_Impar_Par()
