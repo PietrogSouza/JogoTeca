@@ -36,7 +36,8 @@ def jogo_adivinhacao():
     #Escolhe um número aleatório
     if valor_maximo > 1 :
         numero_aleatorio = random.randint (1,valor_maximo)
-
+        
+        vidas = 3
         while True:
             # Perguntar o número
             numero_usuario = int(input(f"Digite um número entre 1 à {valor_maximo}: "))
@@ -46,7 +47,19 @@ def jogo_adivinhacao():
                 print("Você acertou!!")
                 break
             else: 
-                print (f"Você errou o número era {numero_aleatorio}")
+                vidas = vidas - 1
+                #DICA
+                if numero_usuario > numero_aleatorio:
+                    print("o número é maior")
+
+                else:
+                    print("o número é maior")
+                
+                print (f"Você errou Perdeu uma vida")
+                if vidas == 0:
+                    print(f"você perdeu todas suas vidas o número era: {numero_aleatorio}")   
+                    break
+                
 
 
 if __name__ == "__main__":
