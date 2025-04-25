@@ -3,6 +3,7 @@ import Tabuada
 import ImparPar
 import Jokenpo
 import musica_elefante
+import genius
 while True:
     print("""
                                             (`-')      (`-')  _           (`-')  _  
@@ -23,7 +24,8 @@ while True:
     -   # 3 - Jogo Par ou Impar                  -
     -   # 4 - pedra, papel e tesoura             -
     -   # 5 - musica do elefante                 -
-    -   # 0 - Sair                               -
+    -   # 6 - Genius                             -    
+    -   # 0 - Sair                               -                              
     -                                            -
     -                                            -
     ----------------------------------------------
@@ -45,6 +47,12 @@ while True:
         elif jogo == 4:
             Jokenpo.jogo_pedra_papel_tesoura()
         
+        elif jogo == 5:
+            musica_elefante.musica_elefante()
+
+        elif jogo == 6:
+            genius.jogo_genius()    
+
         elif jogo == 0:
             print("foi um prazer jogar com você, até mais tarde")
             break

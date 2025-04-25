@@ -1,50 +1,55 @@
-import winsound
-import time 
-import random
+def jogo_genius():
+    import winsound #Biblioteca de som
+    import time #Marcar o tempo
+    import random #Escolhe algo aleatoriamente
 
-lista_frequencias = [300,600,1200,2400]
+    lista_frequencias = [300,600,900,1200]
+    lista_sequencia = []
 
-lista_sequencia = []
+    print("Seja bem - vindo ao jogo Genius")
+        
+    
 
-print("Seja bem vindo!")
+    input("Pressione ENTER para continuar")
 
-print("Preste atenção nas frequências")
-input("(Pressione ENTER para continuar)")
-
-
-indice = 0
-for frequencia in lista_frequencias:
-    print(indice)
-    winsound.Beep(frequencia,500)
-    time.sleep(0.6)
-    indice = indice + 1
-
-time.sleep(0.5)
-
-print("Prepare-se para o jogo:")
-
-while True:
-    print("Preste atenção na sequencia")
-    time.sleep(1)
-
-    som_escolhido = random.choice(lista_frequencias)
-
-    lista_sequencia.append(som_escolhido)
-
-    for frequencia in lista_sequencia:
-        winsound.Beep(frequencia, 500)
-        time.sleep(0.5)
-
-    resposta = input("Qual foi a sequencia? ")
-
-    vencedor = True
+    #Programa que executa a frequência dos sons mostrando os números da lista
     indice = 0
-    for numero in resposta:
-        numero = int(numero)
-        if lista_frequencias[numero] != lista_sequencia[indice]:
-            vencedor = False
-        indice += 1
+    for frequencia in lista_frequencias:
+        print(indice)
+        winsound.Beep(frequencia,500)
+        time.sleep(1) #Espera x segundos
+        indice +=1
 
-    if vencedor == False:
-        print("Você Perdeu")
-        break
+    time.sleep(0.5)
+
+
+    print("Prepare-se para o jogo...")
+
+    while True:
+        print("Preste atenção na sequência")
+
+        som_escolhido = random.choice(lista_frequencias)
+        lista_sequencia.append(som_escolhido)
+
+        indice = 0
+        for frequencia in lista_sequencia:
+            winsound.Beep(frequencia, 500)
+            time.sleep(0.5)
+    
+        resposta = input("Qual foi a sequência?: ")
+
+        # Verifica se a resposta é igual ao som aleatório escolhido
+        vencedor = True
+
+        if len(lista_sequencia) == len(resposta):
+            indice = 0
+            for numero in resposta:
+                numero = int(numero)
+                if lista_frequencias[numero] != lista_sequencia[indice]:
+                    vencedor = False
+                indice +=1
+        else: 
+            vencedor == False
+
+if __name__ == "__main__":
+    jogo_genius()

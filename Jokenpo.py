@@ -15,7 +15,7 @@ def jogo_pedra_papel_tesoura():
         escolha_usuario = input("Digite uma das opções: PEDRA, PAPEL OU TESOURA ").lower()
 
         while escolha_usuario not in opcoes:
-            print("OPÇÃO INÁLIDA")
+            print("OPÇÃO INVÁLIDA")
             escolha_usuario = input("Escolha entre PEDRA, PAPEL OU TESOURA").lower()
 
         print(f"O computador escolheu: {escolha_computador}")
