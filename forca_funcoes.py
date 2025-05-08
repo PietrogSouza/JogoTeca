@@ -139,11 +139,37 @@ def perguntar_letra():
     return chute_letra.upper()
 
 def fim_de_jogo(resultado):
-    pass
+    if resultado == desenhar_forca(0):
+        fim_de_jogo == "VITÓRIA"
+        print("Parabens você ganhou!!!")
+
+    if resultado == desenhar_forca(7):
+        fim_de_jogo == "DERROTA"
+        print("Hahaha você perdeu")
+
+def montar_tracos(palavra) -> list[str]:
+    tracos = []
+    contador = 0
+    qtdeletras = len(palavra)
+    while contador < qtdeletras:
+        tracos.append("_")
+        contador = contador + 1
+    return tracos
+
+def verificar_letras(tracos,palavra,letra) -> list[str]:
+    contador = 0
+    for letra_percorrida in palavra:
+        if letra_percorrida == letra:
+            tracos[contador] = letra
+        contador += 1
+    return tracos
+
+        
+
 
 
 
 if (__name__=="__main__"):
-   chute_letra = perguntar_letra()
-   print(chute_letra)
-    
+    tracos = montar_tracos("AMORA")
+    tracos = verificar_letras(tracos,"AMORA","A")
+    print(*tracos)
