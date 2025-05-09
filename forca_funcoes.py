@@ -2,8 +2,18 @@ import random
 
 def palavra_aleatoria():
     #lista das palavras da forca
+
+    #usamos o open para abrir o arquivo .txt para o ler com o .read
+    # usamos split para quebrar o enter dentro do arquivo  
+    #logo apos usamos close para fecha-lo
+    arquivo = open("fpalavras.txt","r")
+    lista_palavras = arquivo.read().split()
+    print(arquivo.read())
+    arquivo.close()
     
-    lista_palavras = ["ABACAXI","MORANGO","MAÇÃ","BANANA","GOIABA",]
+    # with open("palavras.txt", "r") ass arquivo:
+    #       lista_palavras = arquivo.read().split()
+    
     palavra_escolhida = random.choice(lista_palavras)
     return palavra_escolhida
     
@@ -139,11 +149,11 @@ def perguntar_letra():
     return chute_letra.upper()
 
 def fim_de_jogo(resultado):
-    if resultado == desenhar_forca(0):
+    if resultado == "VITÓRIA":
         fim_de_jogo == "VITÓRIA"
         print("Parabens você ganhou!!!")
 
-    if resultado == desenhar_forca(7):
+    if resultado == "DERROTA":
         fim_de_jogo == "DERROTA"
         print("Hahaha você perdeu")
 
